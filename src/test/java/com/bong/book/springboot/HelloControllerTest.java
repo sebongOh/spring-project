@@ -22,7 +22,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 public class HelloControllerTest {
 
     @Autowired //3
-    private MockMvc mvc;
+    private MockMvc mvc; //4
 
     @Test
     public void hello_가_리턴된다() throws Exception{
