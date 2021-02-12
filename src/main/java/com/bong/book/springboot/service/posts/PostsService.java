@@ -46,4 +46,12 @@ public class PostsService {
                 .collect(Collectors.toList());
     }
 
+    @Transactional
+    public Long delete(Long id){
+        Posts posts = postsRepository.findById(id).orElseThrow(()->
+                new IllegalArgumentException("해당 글이 없습니다 id = "+id));
+        postsRepository.delete(posts);
+        return id;
+    }
+
 }
